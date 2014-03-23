@@ -4,6 +4,8 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_max_files = 0
 
+let g:airline_theme = "murmur"
+
 let g:airline#extensions#tabline#enabled = 1
 
 syntax on
