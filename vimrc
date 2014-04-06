@@ -8,6 +8,12 @@ let g:airline_theme = "murmur"
 
 let g:airline#extensions#tabline#enabled = 1
 
+set wildignore+=*/bin/*,*/chef/*,*/ci/*,*/conf/*,*/dev_setup/*,*/end-to-end-tests/*,*/hadoop-data/*,*/js-data/*,*/js-aws/*,*/license/*,*/logs/*,*/nagios/*,*/pig-udfs/*,*/scripts/*,*/vagrant-setup/*,*/test-framework/*,*/triflow/*,*/triconf/*
+
+
+
+
+
 syntax on
 colorscheme molokai
 
