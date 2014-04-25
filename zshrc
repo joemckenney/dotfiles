@@ -101,3 +101,4 @@ export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl"
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+export PATH=/usr/local/bin:/usr/local/share/python:$PATH
