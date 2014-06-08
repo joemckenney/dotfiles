@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/home/joe/work/trifacta'
+let g:netrw_dirhist_2='/home/joe/work/trifacta/webapp/src/client/js'
+let g:netrw_dirhist_3='/home/joe/work/trifacta'
+let g:netrw_dirhist_4='/home/joe/work/trifacta/webapp/src/client/js'
+let g:netrw_dirhist_5='/home/joe/work/trifacta/webapp/src/client/js/app/admin'
+let g:netrw_dirhist_6='/home/joe/work/trifacta'
