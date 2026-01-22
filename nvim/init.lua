@@ -185,6 +185,15 @@ vim.o.ttimeoutlen = 0
 vim.o.exrc = true
 vim.o.secure = true
 
+-- [[ LSP Floating Window Borders ]]
+-- Add borders to hover (K) and signature help popups
+vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
+  border = 'rounded',
+})
+vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+  border = 'rounded',
+})
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
@@ -212,9 +221,9 @@ vim.api.nvim_create_user_command('WQ', 'wq', {})
 vim.api.nvim_create_user_command('Wall', 'wall', {})
 vim.api.nvim_create_user_command('Qall', 'qall', {})
 
--- Buffer navigation (using brackets since C-h/l are for window navigation)
-vim.keymap.set('n', '<S-l>', ':bnext<CR>', { desc = 'Next buffer', silent = true })
-vim.keymap.set('n', '<S-h>', ':bprevious<CR>', { desc = 'Previous buffer', silent = true })
+-- Buffer navigation (Ctrl+H/L like old config)
+vim.keymap.set('n', '<C-l>', ':bnext<CR>', { desc = 'Next buffer', silent = true })
+vim.keymap.set('n', '<C-h>', ':bprevious<CR>', { desc = 'Previous buffer', silent = true })
 
 -- Delete trailing whitespace
 vim.keymap.set('n', '<F5>', [[<cmd>let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>]], { desc = 'Delete trailing whitespace', silent = true })
@@ -232,8 +241,9 @@ vim.keymap.set('x', 'p', 'pgvy', { desc = 'Paste and keep register' })
 --  Use CTRL+<hjkl> to switch between windows
 --
 --  See `:help wincmd` for a list of all window commands
-vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
-vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
+-- Using C-h/l for buffer navigation instead (see above)
+-- vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
+-- vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
@@ -596,6 +606,11 @@ require('lazy').setup({
           --  This is where a variable was first declared, or where a function is defined, etc.
           --  To jump back, press <C-t>.
           map('grd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
+          -- Classic keymaps (ported from old CoC config)
+          map('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
+          map('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
+          map('gi', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
+          map('gy', require('telescope.builtin').lsp_type_definitions, '[G]oto T[y]pe Definition')
 
           -- WARN: This is not Goto Definition, this is Goto Declaration.
           --  For example, in C this would take you to the header.
@@ -1014,33 +1029,9 @@ require('lazy').setup({
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
-    main = 'nvim-treesitter.configs', -- Sets main module to use for opts
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
-    opts = {
-      ensure_installed = {
-        'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc',
-        -- Added for your workflow:
-        'typescript', 'tsx', 'javascript', 'json', 'jsonc',
-        'rust', 'go', 'gomod', 'gosum',
-        'python',
-        'prisma',
-        'css', 'scss',
-        'yaml', 'toml',
-        'proto',
-        'dockerfile',
-        'gitignore',
-      },
-      -- Autoinstall languages that are not installed
-      auto_install = true,
-      highlight = {
-        enable = true,
-        -- Some languages depend on vim's regex highlighting system (such as Ruby) for indent rules.
-        --  If you are experiencing weird indenting issues, add the language to
-        --  the list of additional_vim_regex_highlighting and disabled languages for indent.
-        additional_vim_regex_highlighting = { 'ruby' },
-      },
-      indent = { enable = true, disable = { 'ruby' } },
-    },
+    -- nvim-treesitter 1.0+ removed the configs module - highlighting is automatic
+    -- when parsers are installed. Just run :TSUpdate and :TSInstall <lang> as needed.
     -- There are additional nvim-treesitter modules that you can use to interact
     -- with nvim-treesitter. You should go explore a few and see what interests you:
     --
