@@ -115,7 +115,7 @@ vim.o.showmode = false
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
 vim.schedule(function()
-  vim.o.clipboard = 'unnamedplus'
+  vim.o.clipboard = 'unnamed,unnamedplus'
 end)
 
 -- Enable break indent
@@ -524,6 +524,8 @@ require('lazy').setup({
       library = {
         -- Load luvit types when the `vim.uv` word is found
         { path = '${3rd}/luv/library', words = { 'vim%.uv' } },
+        -- Neovim runtime for vim global
+        { path = vim.env.VIMRUNTIME },
       },
     },
   },
@@ -762,7 +764,7 @@ require('lazy').setup({
         -- Biome (replaces coc-biome)
         biome = {},
 
-        -- Lua
+        -- Lua (diagnostics.globals configured in .luarc.json)
         lua_ls = {
           settings = {
             Lua = {
@@ -772,6 +774,33 @@ require('lazy').setup({
             },
           },
         },
+
+        -- Dockerfile
+        dockerls = {},
+
+        -- Helm templates
+        helm_ls = {},
+
+        -- YAML (GitHub Actions, docker-compose, k8s manifests, etc.)
+        yamlls = {
+          settings = {
+            yaml = {
+              schemas = {
+                ['https://json.schemastore.org/github-workflow.json'] = '/.github/workflows/*',
+                ['https://json.schemastore.org/github-action.json'] = '/action.yml',
+                ['https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json'] = '/docker-compose*.yml',
+              },
+              validate = true,
+              completion = true,
+            },
+          },
+        },
+
+        -- Terraform
+        terraformls = {},
+
+        -- Shell scripts (bash)
+        bashls = {},
       }
 
       -- Ensure the servers and tools above are installed
