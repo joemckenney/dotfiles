@@ -1,0 +1,68 @@
+
+
+NVIM v0.6.0-dev+284-gc2a65921d
+Build type: RelWithDebInfo
+LuaJIT 2.0.5
+Compilation: /usr/bin/cc -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -fexceptions     -Wp,-D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security     -fstack-clash-protection -fcf-protection -Wp,-U_FORTIFY_SOURCE -Wp,-D_FORTIFY_SOURCE=1 -DNVIM_TS_HAS_SET_MATCH_LIMIT -O2 -g -Og -g -Wall -Wextra -pedantic -Wno-unused-parameter -Wstrict-prototypes -std=gnu99 -Wshadow -Wconversion -Wmissing-prototypes -Wimplicit-fallthrough -Wvla -fstack-protector-strong -fno-common -fdiagnostics-color=auto -DINCLUDE_GENERATED_DECLARATIONS -D_GNU_SOURCE -DNVIM_MSGPACK_HAS_FLOAT32 -DNVIM_UNIBI_HAS_VAR_FROM -DMIN_LOG_LEVEL=3 -I/home/joe/.cache/yay/neovim-git/src/build/config -I/home/joe/.cache/yay/neovim-git/src/neovim-git/src -I/usr/include -I/home/joe/.cache/yay/neovim-git/src/build/src/nvim/auto -I/home/joe/.cache/yay/neovim-git/src/build/include
+Compiled by joe
+
+Features: +acl +iconv +tui
+See ":help feature-compile"
+
+   system vimrc file: "$VIM/sysinit.vim"
+  fall-back for $VIM: "/usr/share/nvim"
+
+Run :checkhealth for more info
+chdir(/home/joe/.config/nvim)
+chdir(/home/joe/.vim/plugged/coc.nvim/autoload)
+chdir(/home/joe/.config/nvim)
+sourcing "/home/joe/.vim/plugged/coc.nvim/autoload/coc.vim"
+finished sourcing /home/joe/.vim/plugged/coc.nvim/autoload/coc.vim
+chdir(/home/joe/.config/nvim)
+chdir(/tmp/nvimfaAydr/coc.nvim-57849)
+chdir(/home/joe/.config/nvim)
+sourcing "/tmp/nvimfaAydr/coc.nvim-57849/coc-57849.vim"
+finished sourcing /tmp/nvimfaAydr/coc.nvim-57849/coc-57849.vim
+chdir(/home/joe/.config/nvim)
+chdir(/home/joe/.vim/plugged/coc.nvim/autoload/coc)
+chdir(/home/joe/.config/nvim)
+sourcing "/home/joe/.vim/plugged/coc.nvim/autoload/coc/highlight.vim"
+finished sourcing /home/joe/.vim/plugged/coc.nvim/autoload/coc/highlight.vim
+chdir(/home/joe/.config/nvim)
+chdir(/home/joe/.vim/plugged/coc.nvim/autoload/coc)
+chdir(/home/joe/.config/nvim)
+sourcing "/home/joe/.vim/plugged/coc.nvim/autoload/coc/cursor.vim"
+finished sourcing /home/joe/.vim/plugged/coc.nvim/autoload/coc/cursor.vim
+Executing BufWinLeave Autocommands for "*"
+autocommand call s:Autocmd('BufWinLeave', +expand('<abuf>'), bufwinid(+expand('<abuf>')))
+
+Executing BufWinLeave Autocommands for "*"
+autocommand if s:can_diffoff(+expand('<abuf>')) && s:diff_window_count() == 2 |   call s:diffoff_all(s:Dir(+expand('<abuf>'))) | endif
+
+Executing BufWinLeave Autocommands for "*"
+autocommand execute getwinvar(+bufwinnr(+expand('<abuf>')), 'fugitive_leave')
+
+Executing VimLeavePre Autocommands for "*"
+autocommand let g:coc_vim_leaving = 1
+
+Executing VimLeavePre Autocommands for "*"
+autocommand lua vim.lsp._vim_exit_handler()
+
+Writing ShaDa file "/home/joe/.local/share/nvim/shada/main.shada"
+chdir(/home/joe/.config/nvim)
+chdir(/home/joe)
+chdir(/home/joe/.config/nvim)
+chdir(/home/joe/.config/nvim)
+chdir(/home/joe/switchboard/repos/switchboard/apps/webapp/src)
+chdir(/home/joe/.config/nvim)
+chdir(/home/joe/.config/nvim)
+chdir(/home/joe/switchboard/repos/switchboard/apps/webapp)
+chdir(/home/joe/.config/nvim)
+chdir(/home/joe/.config/nvim)
+chdir(/home/joe/switchboard/repos/switchboard/apps/webapp)
+chdir(/home/joe/.config/nvim)
+chdir(/home/joe/.config/nvim)
+chdir(/home/joe/switchboard/repos/switchboard/apps/webapp/src)
+chdir(/home/joe/.config/nvim)
+Executing VimLeave Autocommands for "*"
+autocommand for s:jobbuf in keys(s:edit_jobs) |   call writefile(['Aborting edit due to Vim exit.'], s:edit_jobs[s:jobbuf][0].file . '.exit') |   redraw! |   call call('s:RunWait', remove(s:edit_jobs, s:jobbuf)) | endfor

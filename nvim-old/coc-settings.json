@@ -1,0 +1,8 @@
+{
+  "hover.target": "float",
+  "typescript.suggest.autoImports": true,
+  "rust-analyzer.enable": true,
+  "rust-analyzer.trace.server": "verbose",
+  "rust-analyzer.diagnostics.enable": true,
+  "snippets.ultisnips.pythonPrompt": false
+}

@@ -1,0 +1,38 @@
+{
+  "coc.preferences.formatOnSaveFiletypes": [
+    "*",
+    "css",
+    "javascript",
+    "typescript",
+    "typescriptreact",
+    "javascriptreact",
+    "json",
+    "typescript.tsx",
+    "markdown",
+    "python"
+  ],
+  "hover.target": "float",
+  "suggest.floatEnable": true,
+  "typescript.suggest.autoImports": true,
+  "python.jediEnabled": true,
+  "eslint.autoFixOnSave": true,
+  "python.linting.mypyEnabled": true,
+  "python.linting.flake8Enabled": true,
+  "python.formatting.provider": "black",
+  "prisma.prismaFmtBinPath": "",
+  "python.linting.enabled": true
+}
+
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "javascript",
+    "javascriptreact",
+    "json",
+    "rust",
+    "markdown",
+    "prisma",
+    "python",
+    "typescript",
+    "typescript.tsx",
+    "typescriptreact"
+  ],
