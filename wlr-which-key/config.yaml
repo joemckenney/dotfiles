@@ -1,0 +1,170 @@
+font: Fira Code SemiBold 12
+background: "#222222"
+color: "#bbbbbb"
+border: "#444444"
+border_width: 10
+padding: 10
+corner_r: 0
+separator: " → "
+anchor: center
+
+menu:
+  - key: w
+    desc: Windows
+    submenu:
+      - key: j
+        desc: Focus next
+        cmd: wtype -M alt -k j -m alt
+      - key: k
+        desc: Focus prev
+        cmd: wtype -M alt -k k -m alt
+      - key: Return
+        desc: Zoom master
+        cmd: wtype -M alt -k Return -m alt
+      - key: c
+        desc: Kill client
+        cmd: wtype -M alt -M shift -k c -m shift -m alt
+      - key: space
+        desc: Toggle float
+        cmd: wtype -M alt -M shift -k space -m shift -m alt
+      - key: e
+        desc: Toggle fullscreen
+        cmd: wtype -M alt -k e -m alt
+      - key: i
+        desc: Inc master count
+        cmd: wtype -M alt -k i -m alt
+      - key: d
+        desc: Dec master count
+        cmd: wtype -M alt -k d -m alt
+      - key: h
+        desc: Shrink master
+        cmd: wtype -M alt -k h -m alt
+      - key: l
+        desc: Grow master
+        cmd: wtype -M alt -k l -m alt
+
+  - key: l
+    desc: Layouts
+    submenu:
+      - key: t
+        desc: "[]=  Tile"
+        cmd: dwlmsg -s -l 0
+      - key: f
+        desc: "><>  Float"
+        cmd: dwlmsg -s -l 1
+      - key: m
+        desc: "[M]  Monocle"
+        cmd: dwlmsg -s -l 2
+      - key: u
+        desc: "TTT  Bstack"
+        cmd: dwlmsg -s -l 3
+      - key: o
+        desc: "===  Bstack horiz"
+        cmd: dwlmsg -s -l 4
+
+  - key: t
+    desc: Tags
+    submenu:
+      - key: "1"
+        desc: Tag 1
+        cmd: dwlmsg -s -t 0
+      - key: "2"
+        desc: Tag 2
+        cmd: dwlmsg -s -t 1
+      - key: "3"
+        desc: Tag 3
+        cmd: dwlmsg -s -t 2
+      - key: "4"
+        desc: Tag 4
+        cmd: dwlmsg -s -t 3
+      - key: "5"
+        desc: Tag 5
+        cmd: dwlmsg -s -t 4
+      - key: "6"
+        desc: Tag 6
+        cmd: dwlmsg -s -t 5
+      - key: "7"
+        desc: Tag 7
+        cmd: dwlmsg -s -t 6
+      - key: "8"
+        desc: Tag 8
+        cmd: dwlmsg -s -t 7
+      - key: "9"
+        desc: Tag 9
+        cmd: dwlmsg -s -t 8
+      - key: "0"
+        desc: All tags
+        cmd: dwlmsg -s -t 511
+      - key: Tab
+        desc: Previous tag
+        cmd: wtype -M alt -k Tab -m alt
+
+  - key: m
+    desc: Move to Tag
+    submenu:
+      - key: "1"
+        desc: Tag 1
+        cmd: dwlmsg -s -c 0 1
+      - key: "2"
+        desc: Tag 2
+        cmd: dwlmsg -s -c 0 2
+      - key: "3"
+        desc: Tag 3
+        cmd: dwlmsg -s -c 0 4
+      - key: "4"
+        desc: Tag 4
+        cmd: dwlmsg -s -c 0 8
+      - key: "5"
+        desc: Tag 5
+        cmd: dwlmsg -s -c 0 16
+      - key: "6"
+        desc: Tag 6
+        cmd: dwlmsg -s -c 0 32
+      - key: "7"
+        desc: Tag 7
+        cmd: dwlmsg -s -c 0 64
+      - key: "8"
+        desc: Tag 8
+        cmd: dwlmsg -s -c 0 128
+      - key: "9"
+        desc: Tag 9
+        cmd: dwlmsg -s -c 0 256
+
+  - key: o
+    desc: Monitors
+    submenu:
+      - key: h
+        desc: Focus left
+        cmd: wtype -M alt -k comma -m alt
+      - key: l
+        desc: Focus right
+        cmd: wtype -M alt -k period -m alt
+      - key: H
+        desc: Move to left
+        cmd: wtype -M alt -M shift -k comma -m shift -m alt
+      - key: L
+        desc: Move to right
+        cmd: wtype -M alt -M shift -k period -m shift -m alt
+
+  - key: a
+    desc: Apps
+    submenu:
+      - key: Return
+        desc: Terminal (foot)
+        cmd: foot
+      - key: p
+        desc: Launcher (fuzzel)
+        cmd: fuzzel
+
+  - key: s
+    desc: Session
+    submenu:
+      - key: q
+        desc: Quit dwl
+        cmd: wtype -M alt -M shift -k q -m shift -m alt
+      - key: b
+        desc: Toggle bar
+        cmd: wtype -M alt -k b -m alt
+      - key: g
+        desc: Toggle gaps
+        cmd: wtype -M alt -k g -m alt

@@ -1,0 +1,4 @@
+profile docked {
+	output "Dell Inc. DELL U2720Q 272VW83" mode 3840x2160 position 0,0 transform 90 scale 1.5
+	output "Dell Inc. DELL U2720Q 40MMYG3" mode 3840x2160 position 1440,0 transform normal scale 1.5
+}
